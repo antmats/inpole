@@ -383,8 +383,8 @@ def describe_categorical(D):
         table.insert(1, 'proportion', proportion)
 
         try:
-            from .corevitas import variables
-            categories = variables[s.name].pop('categories', None)
+            from inpole.data.corevitas import COREVITAS_DATA
+            categories = COREVITAS_DATA.variables[s.name].pop('categories', None)
         except ModuleNotFoundError:
             categories = None
         except KeyError:
